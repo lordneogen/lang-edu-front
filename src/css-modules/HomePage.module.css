@@ -1,0 +1,28 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.056);
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.title {
+    padding: 0.5em;
+}
+
+.title:hover {
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.056);
+    background-color: black;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-size: small;
+}
+
+.title:hover .link {
+    color: white;
+}
