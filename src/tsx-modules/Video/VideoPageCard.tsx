@@ -14,7 +14,6 @@ import DeleteIcon from '@mui/icons-material/Delete';
 const actions = [
     { icon: <DeleteIcon />, name: 'Удалить' },
     { icon: <EditIcon />, name: 'Редактировать' },
-    { icon: <ShareIcon />, name: 'Поделиться' },
 ];
 
 

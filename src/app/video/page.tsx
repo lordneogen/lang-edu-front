@@ -1,4 +1,4 @@
-import VideoPage from "@/tsx-modules/VideoPage";
+import VideoPage from "@/tsx-modules/Video/VideoPage";
 
 
 

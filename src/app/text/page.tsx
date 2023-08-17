@@ -1,4 +1,4 @@
-import TextPage from "@/tsx-modules/TextPage";
+import TextPage from "@/tsx-modules/Text/TextPage";
 
 
 

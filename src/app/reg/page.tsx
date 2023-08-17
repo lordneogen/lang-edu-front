@@ -1,5 +1,4 @@
-
-export default function VocPG() {
+export default function Reg() {
     return (
         <div></div>
     )

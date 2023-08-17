@@ -4,7 +4,6 @@ import { Box, Button } from "@mui/material"
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2"
 import TextField from '@mui/material/TextField';
 import styles from '../css-modules/VideoPage.module.css'
-import VideoPageCard from "./VideoPageCard";
 import { Container, InputAdornment } from "@mui/material";
 import { useEffect } from "react";
 import CircularProgress from '@mui/material/CircularProgress';
@@ -12,9 +11,10 @@ import Pagination from '@mui/material/Pagination';
 import { useState } from "react";
 
 import SearchIcon from "@mui/icons-material/Search";
+import TextPageCard from "./TextPageCard";
 
 
-export default function VideoPage() {
+export default function TextPage() {
 
     const [searchTerm, setSearchTerm] = useState("");
     const [loading, setLoading] = useState(false);
@@ -100,18 +100,7 @@ export default function VideoPage() {
                 )
             }
             <div className={`${styles.card_out} ${!loading ? styles.loading : null}`}>
-                <VideoPageCard></VideoPageCard>
-                <VideoPageCard></VideoPageCard>
-                <VideoPageCard></VideoPageCard>
-                <VideoPageCard></VideoPageCard>
-                <VideoPageCard></VideoPageCard>
-                <VideoPageCard></VideoPageCard>
-                <VideoPageCard></VideoPageCard>
-                <VideoPageCard></VideoPageCard>
-                <VideoPageCard></VideoPageCard>
-                <VideoPageCard></VideoPageCard>
-                <VideoPageCard></VideoPageCard>
-                <VideoPageCard></VideoPageCard>
+                <TextPageCard></TextPageCard>
             </div>
             <div className={`${styles.pag} ${!loading ? styles.loading : null}`}><Pagination count={10} color="secondary" /></div>
         </div>

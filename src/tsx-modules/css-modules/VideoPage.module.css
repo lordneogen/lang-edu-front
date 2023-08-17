@@ -8,7 +8,7 @@
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 1vw;
+    padding: 1vmax;
     opacity: 0.8;
 }
 
@@ -18,15 +18,15 @@
 
 .card_out {
     display: grid;
-    margin-top: 2vw;
-    grid-template-columns: repeat(4, 42vh);
+    margin-top: 2vmax;
+    grid-template-columns: repeat(4, 42vmin);
     /* grid-template-rows: repeat(4, 26vw); */
     justify-content: center;
 }
 
 .card {
-    width: 40vh;
-    height: 24vw;
+    width: 40vmin;
+    height: 24vmax;
     display: flex;
     justify-self: center;
     background: rgba(255, 255, 255, 0.2);
@@ -38,23 +38,23 @@
     flex-direction: column;
     padding: 0;
     transition: padding 2s;
-    margin-top: 1vw;
+    margin-top: 1vmax;
 }
 
 .card:hover {
-    padding: 0.3vw;
+    padding: 0.3vmax;
     cursor: pointer;
 }
 
 .card_photo {
     margin-left: auto;
     margin-right: auto;
-    width: 28vh;
-    height: 12vw;
+    width: 28vmin;
+    height: 12vmax;
     border: solid rgb(147, 14, 94);
-    margin-top: 2vw;
+    margin-top: 2vmax;
     border-radius: 0.5vw;
-    box-shadow: 1vw 1vw 1vw rgba(0, 0, 0, 0.056);
+    box-shadow: 1vmax 1vmax 1vmax rgba(0, 0, 0, 0.056);
 
     background-color: #19477F;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23303c7c' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%2347327a' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%235f2777' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%23761d75' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%238D1272' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
@@ -65,10 +65,10 @@
 .card_name {
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 2vw;
-    width: 28vh;
-    height: 8vw;
-    margin-top: 2vw;
+    margin-bottom: 2vmax;
+    width: 28vmin;
+    height: 8vmax;
+    margin-top: 2vmax;
 
     background: rgba(255, 255, 255, 0.2);
     border-radius: 16px;
@@ -85,8 +85,8 @@
 }
 
 .card_crud {
-    width: 2vw;
-    height: 2vw;
+    width: 2vmax;
+    height: 2vmax;
     position: absolute;
     top: 0vw;
     right: 0vw;
@@ -102,13 +102,13 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 8vw;
+    margin-top: 8vmax;
 }
 
 .pag {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 4vw;
-    margin-bottom: 4vw;
+    margin-top: 4vmax;
+    margin-bottom: 4vmax;
 }

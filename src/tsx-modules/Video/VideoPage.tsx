@@ -4,18 +4,27 @@ import { Box, Button } from "@mui/material"
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2"
 import TextField from '@mui/material/TextField';
 import styles from '../css-modules/VideoPage.module.css'
-import TextPageCard from "./TextPageCard";
+import VideoPageCard from "./VideoPageCard";
 import { Container, InputAdornment } from "@mui/material";
-
-
+import { useEffect } from "react";
+import CircularProgress from '@mui/material/CircularProgress';
+import Pagination from '@mui/material/Pagination';
 import { useState } from "react";
 
 import SearchIcon from "@mui/icons-material/Search";
 
 
-export default function TextPage() {
+export default function VideoPage() {
 
     const [searchTerm, setSearchTerm] = useState("");
+    const [loading, setLoading] = useState(false);
+
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(true);
+        }, 2000);
+    }, []);
 
     const handleChange = (event) => {
         setSearchTerm(event.target.value);
@@ -83,10 +92,27 @@ export default function TextPage() {
                     </Grid2>
                 </Box>
             </div>
-            <div className={styles.card_out}>
-                <TextPageCard></TextPageCard>
+            {
+                loading ? (
+                    <div></div>
+                ) : (
+                    <div className={styles.load}><CircularProgress /></div>
+                )
+            }
+            <div className={`${styles.card_out} ${!loading ? styles.loading : null}`}>
+                <VideoPageCard></VideoPageCard>
+                <VideoPageCard></VideoPageCard>
+                <VideoPageCard></VideoPageCard>
+                <VideoPageCard></VideoPageCard>
+                <VideoPageCard></VideoPageCard>
+                <VideoPageCard></VideoPageCard>
+                <VideoPageCard></VideoPageCard>
+                <VideoPageCard></VideoPageCard>
+                <VideoPageCard></VideoPageCard>
+                <VideoPageCard></VideoPageCard>
+                <VideoPageCard></VideoPageCard>
             </div>
-
+            <div className={`${styles.pag} ${!loading ? styles.loading : null}`}><Pagination count={10} color="secondary" /></div>
         </div>
     )
 }

@@ -9,7 +9,7 @@ import ReactPlayer from 'react-player';
 import 'react-html5video/dist/styles.css';
 // import videoSource from './video.mp4';
 import Grid from "@mui/material/Unstable_Grid2";
-import HomePage from '@/tsx-modules/HomePage';
+import HomePage from '@/tsx-modules/Home/HomePage';
 
 const SubtitlePlayer = ({
   children,
