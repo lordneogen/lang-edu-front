@@ -1,7 +1,7 @@
 import AboutPage from "@/tsx-modules/AboutPage";
 
 
-export default function About() {
+export default function AboutPG() {
     return (
         <AboutPage></AboutPage>
     )
