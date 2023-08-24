@@ -25,11 +25,8 @@ export default function HomePage({
         <div>
             <div className={styles.row_main}>
                 <div className={styles.row}>
-                    <Grid>
-                        <div >
-                            <Icon></Icon>
-                        </div>
-                    </Grid>
+                    <Icon></Icon>
+
                 </div>
                 <div className={styles.row_button}>
                     <Grid container spacing={4}>

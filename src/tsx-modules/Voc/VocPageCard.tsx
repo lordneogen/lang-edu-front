@@ -9,7 +9,6 @@ import ShareIcon from '@mui/icons-material/Share';
 import DehazeIcon from '@mui/icons-material/Dehaze';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
-import Grid2 from "@mui/material/Unstable_Grid2/Grid2"
 
 
 const actions = [
@@ -18,10 +17,10 @@ const actions = [
 ];
 
 
-export default function VideoPageCard() {
+export default function VocPageCard() {
     return (
-        <Grid2>
-            <div className={styles.card}>
+        <div>
+            <div className={styles.card_name}>
                 <div className={styles.card_crud}>
                     <SpeedDial
                         ariaLabel="SpeedDial basic example"
@@ -37,15 +36,10 @@ export default function VideoPageCard() {
                         ))}
                     </SpeedDial>
                 </div>
-                <div className={styles.card_photo}>
-
-                </div>
-                <div className={styles.card_name}>
-                    <p>
-                        Текст
-                    </p>
-                </div>
+                <p>
+                    Текст
+                </p>
             </div>
-        </Grid2>
+        </div>
     )
 }

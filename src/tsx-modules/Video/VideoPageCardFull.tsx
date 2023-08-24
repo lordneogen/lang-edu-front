@@ -17,7 +17,7 @@ const actions = [
 ];
 
 
-export default function TextPageCard() {
+export default function VideoPageCard() {
     return (
         <div className={styles.card}>
             <div className={styles.card_crud}>

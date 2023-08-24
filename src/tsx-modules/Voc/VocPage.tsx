@@ -4,7 +4,6 @@ import { Box, Button } from "@mui/material"
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2"
 import TextField from '@mui/material/TextField';
 import styles from '../css-modules/VideoPage.module.css'
-import VideoPageCard from "./VideoPageCard";
 import { Container, InputAdornment } from "@mui/material";
 import { useEffect } from "react";
 import CircularProgress from '@mui/material/CircularProgress';
@@ -12,13 +11,14 @@ import Pagination from '@mui/material/Pagination';
 import { useState } from "react";
 
 import SearchIcon from "@mui/icons-material/Search";
+import VocPageCard from "./VocPageCard";
 
 
-export default function VideoPage() {
+export default function VocPage() {
 
     const [searchTerm, setSearchTerm] = useState("");
     const [loading, setLoading] = useState(false);
-    const [full_size, setFull_size] = useState(false);
+
 
     useEffect(() => {
         setTimeout(() => {
@@ -26,7 +26,6 @@ export default function VideoPage() {
         }, 2000);
     }, []);
 
-    // @ts-ignore
     const handleChange = (event) => {
         setSearchTerm(event.target.value);
     };
@@ -70,19 +69,6 @@ export default function VideoPage() {
                         <Grid2>
                             <Button
                                 variant="contained"
-                                component="label"
-                                color="warning"
-                            >
-                                Файл
-                                <input
-                                    type="file"
-                                    hidden
-                                />
-                            </Button>
-                        </Grid2>
-                        <Grid2>
-                            <Button
-                                variant="contained"
                                 // component="label"
                                 color="warning"
 
@@ -101,37 +87,15 @@ export default function VideoPage() {
                 )
             }
             <div className={`${styles.card_out} ${!loading ? styles.loading : null}`}>
-                <Grid2 justifyContent="center" container spacing={2}>
-                    <VideoPageCard></VideoPageCard>
-                    <VideoPageCard></VideoPageCard>
-                    <VideoPageCard></VideoPageCard>
-                    <VideoPageCard></VideoPageCard>
-                    <VideoPageCard></VideoPageCard>
-                    <VideoPageCard></VideoPageCard>
-                    <VideoPageCard></VideoPageCard>
-                    <VideoPageCard></VideoPageCard>
-                    <VideoPageCard></VideoPageCard>
-                    <VideoPageCard></VideoPageCard>
-                    <VideoPageCard></VideoPageCard>
-                </Grid2>
+                <VocPageCard></VocPageCard>
+                <VocPageCard></VocPageCard>
+                <VocPageCard></VocPageCard>
+                <VocPageCard></VocPageCard>
+                <VocPageCard></VocPageCard>
+                <VocPageCard></VocPageCard>
+                <VocPageCard></VocPageCard>
             </div>
             <div className={`${styles.pag} ${!loading ? styles.loading : null}`}><Pagination count={10} color="secondary" /></div>
-            <div>
-                {
-                    full_size ? (
-                        <div className={styles.full_card}>
-                            <div className={styles.inner_card}>
-                                <div className={styles.row}>
-
-                                </div>
-                            </div>
-                        </div>
-                    ) : (
-                        <div></div>
-                    )
-
-                }
-            </div>
         </div>
     )
 }

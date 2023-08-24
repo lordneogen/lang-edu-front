@@ -2,7 +2,7 @@
 
 export default function Icon() {
     return (
-        <svg width="64vmax" height="12vmax" viewBox="0 0 640 124" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="64vmax" height="20vmin" viewBox="0 0 640 124" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_1_2)">
                 <rect width="640" height="124" fill="#E1A74D" fill-opacity="0.5" />
                 <g filter="url(#filter0_d_1_2)">

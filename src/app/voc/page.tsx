@@ -1,6 +1,7 @@
+import VocPage from "@/tsx-modules/Voc/VocPage";
 
 export default function VocPG() {
     return (
-        <div></div>
+        <VocPage></VocPage>
     )
 }
