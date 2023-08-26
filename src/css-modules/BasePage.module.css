@@ -1,4 +1,4 @@
-.row {
+.baseline {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -12,19 +12,17 @@
     opacity: 0.8;
 }
 
-.inp {
+.default_1vmin_margin {
     margin: 1vmin;
 }
 
-.card_out {
+.externalCardContainer {
     display: grid;
     margin-top: 2vmax;
-
-    /* grid-template-rows: repeat(4, 26vw); */
     justify-content: center;
 }
 
-.card {
+.Card {
     width: 40vmin;
     height: 24vmax;
     display: flex;
@@ -41,12 +39,12 @@
     margin-top: 1vmax;
 }
 
-.card:hover {
+.Card:hover {
     padding: 0.3vmax;
     cursor: pointer;
 }
 
-.card_photo {
+.Card_photo {
     margin-left: auto;
     margin-right: auto;
     width: 28vmin;
@@ -62,7 +60,7 @@
     background-size: cover;
 }
 
-.card_name {
+.Card_name {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2vmax;
@@ -78,13 +76,13 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.card_name p {
+.Card_name p {
     white-space: normal;
     overflow: hidden;
     text-align: center;
 }
 
-.card_crud {
+.Card_crud {
     width: 2vmax;
     height: 2vmax;
     position: absolute;
@@ -94,11 +92,11 @@
     z-index: 99;
 }
 
-.loading {
+.loading_bool {
     visibility: hidden;
 }
 
-.load {
+.loading_icon {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -113,20 +111,19 @@
     margin-bottom: 4vmax;
 }
 
-.full_card {
+.open_Card {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* From https://css.glass */
     background: rgba(117, 42, 143, 0.2);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
 }
 
-.inner_card {
+.inner_open_Card {
     position: fixed;
     top: 10vmax;
     left: 12%;

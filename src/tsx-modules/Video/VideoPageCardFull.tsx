@@ -1,4 +1,4 @@
-import styles from '../css-modules/VideoPage.module.css'
+import styles from '../../css-modules/BasePage.module.css'
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
@@ -19,8 +19,8 @@ const actions = [
 
 export default function VideoPageCard() {
     return (
-        <div className={styles.card}>
-            <div className={styles.card_crud}>
+        <div className={styles.Card}>
+            <div className={styles.Card_crud}>
                 <SpeedDial
                     ariaLabel="SpeedDial basic example"
                     sx={{ '& .MuiFab-primary': { width: 40, height: 40 }, position: 'absolute', right: "-1vw", bottom: "0vw" }}
@@ -35,10 +35,10 @@ export default function VideoPageCard() {
                     ))}
                 </SpeedDial>
             </div>
-            <div className={styles.card_photo}>
+            <div className={styles.Card_photo}>
 
             </div>
-            <div className={styles.card_name}>
+            <div className={styles.Card_name}>
                 <p>
                     Текст
                 </p>

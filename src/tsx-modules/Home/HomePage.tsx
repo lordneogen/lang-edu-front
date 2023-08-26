@@ -1,6 +1,6 @@
 "use client";
 import { usePathname } from "next/navigation";
-import styles from '../css-modules/HomePage.module.css'
+import styles from '../../css-modules/HomePage.module.css'
 import Grid from "@mui/material/Unstable_Grid2";
 import Link from "next/link";
 import Icon from "../Svg/Icon";
@@ -23,12 +23,12 @@ export default function HomePage({
     const pathname = usePathname();
     return (
         <div>
-            <div className={styles.row_main}>
-                <div className={styles.row}>
+            <div className={styles.baseline_main}>
+                <div className={styles.baseline}>
                     <Icon></Icon>
 
                 </div>
-                <div className={styles.row_button}>
+                <div className={styles.baseline_button}>
                     <Grid container spacing={4}>
                         {
                             pages.map(({ id, title, path, select }) => (

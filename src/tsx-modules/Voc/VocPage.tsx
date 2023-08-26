@@ -3,7 +3,7 @@
 import { Box, Button } from "@mui/material"
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2"
 import TextField from '@mui/material/TextField';
-import styles from '../css-modules/VideoPage.module.css'
+import styles from '../../css-modules/BasePage.module.css'
 import { Container, InputAdornment } from "@mui/material";
 import { useEffect } from "react";
 import CircularProgress from '@mui/material/CircularProgress';
@@ -26,6 +26,7 @@ export default function VocPage() {
         }, 2000);
     }, []);
 
+    // @ts-ignore
     const handleChange = (event) => {
         setSearchTerm(event.target.value);
     };
@@ -33,11 +34,11 @@ export default function VocPage() {
 
     return (
         <div>
-            <div className={styles.row}>
+            <div className={styles.baseline}>
                 <Box>
                     <Grid2 alignItems="center" container spacing={2}>
                         <Grid2 >
-                            <div className={styles.inp}>
+                            <div className={styles.default_1vmin_margin}>
                                 <TextField
                                     id="search"
                                     color="warning"
@@ -55,7 +56,7 @@ export default function VocPage() {
                                     }}
                                 />
                             </div>
-                            <div className={styles.inp}>
+                            <div className={styles.default_1vmin_margin}>
                                 <TextField
                                     color="warning"
                                     sx={{ width: '50vw' }}
@@ -83,10 +84,10 @@ export default function VocPage() {
                 loading ? (
                     <div></div>
                 ) : (
-                    <div className={styles.load}><CircularProgress /></div>
+                    <div className={styles.loading_icon}><CircularProgress /></div>
                 )
             }
-            <div className={`${styles.card_out} ${!loading ? styles.loading : null}`}>
+            <div className={`${styles.externalCardContainer} ${!loading ? styles.loading_bool : null}`}>
                 <VocPageCard></VocPageCard>
                 <VocPageCard></VocPageCard>
                 <VocPageCard></VocPageCard>
@@ -95,7 +96,7 @@ export default function VocPage() {
                 <VocPageCard></VocPageCard>
                 <VocPageCard></VocPageCard>
             </div>
-            <div className={`${styles.pag} ${!loading ? styles.loading : null}`}><Pagination count={10} color="secondary" /></div>
+            <div className={`${styles.pag} ${!loading ? styles.loading_bool : null}`}><Pagination count={10} color="secondary" /></div>
         </div>
     )
 }
