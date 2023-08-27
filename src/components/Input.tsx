@@ -10,10 +10,11 @@ import Autocomplete from '@mui/material/Autocomplete';
 
 
 
-export default function InputForPage({ showFileInput = true,
-    showFileButton = true,
-    showAddButton = true,
-    showWordInput = true,
+export default function InputForPage({
+    showFileInput = false,
+    showFileButton = false,
+    showAddButton = false,
+    showWordInput = false,
     onSubmit,
     onSearch,
 }:
@@ -25,12 +26,23 @@ export default function InputForPage({ showFileInput = true,
         onSubmit?: () => void,
         onSearch?: () => any,
     }) {
+
+    /**
+     * *Поиск и название
+    */
     const [searchTerm, setSearchTerm] = useState("");
     const [nameTerm, setNameTerm] = useState("");
+
+    /**
+     * *Слова
+    */
 
     const [word1Term, setWord1Term] = useState("");
     const [word2Term, setWord2Term] = useState("");
 
+    /**
+     * *Языки
+     */
     const [lang1Term, setLang1Term] = useState<string | null>(null);
 
     const Lang1change = (event: React.ChangeEvent<{}>, newValue: string | null) => {
@@ -44,6 +56,12 @@ export default function InputForPage({ showFileInput = true,
     };
 
     const languages = ['English', 'Русский'];
+
+    /**
+     ** Путь к файлу
+    */
+
+    const [filepath, setFilepath] = useState("");
 
     return (
         <div className={styles.baseline}>
@@ -94,21 +112,7 @@ export default function InputForPage({ showFileInput = true,
                                         value={lang1Term}
                                         onChange={Lang1change}
                                         options={languages}
-                                        renderInput={(params) => <TextField {...params} label="Autocomplete" />}
-                                    />
-                                </div>
-                                <div className={styles.default_1vmin_margin}>
-                                    <TextField
-                                        color="warning"
-                                        sx={{ width: '50vw' }}
-                                        required
-                                        value={word2Term}
-                                        id="outlined-required"
-                                        label="Перевод"
-                                        defaultValue="Перевод"
-                                        onChange={(e) => {
-                                            setWord2Term(e.target.value);
-                                        }}
+                                        renderInput={(params) => <TextField {...params} label="Язык оригинала" />}
                                     />
                                 </div>
                                 <div className={styles.default_1vmin_margin}>
@@ -116,10 +120,10 @@ export default function InputForPage({ showFileInput = true,
                                         disablePortal
                                         id="combo-box-demo"
                                         sx={{ width: '50vw' }}
-                                        value={lang1Term}
-                                        onChange={Lang1change}
+                                        value={lang2Term}
+                                        onChange={Lang2change}
                                         options={languages}
-                                        renderInput={(params) => <TextField {...params} label="Autocomplete" />}
+                                        renderInput={(params) => <TextField {...params} label="Язык перевода" />}
                                     />
                                 </div>
                             </div>
@@ -144,18 +148,26 @@ export default function InputForPage({ showFileInput = true,
                     </Grid2>
                     <Grid2>
                         {showFileButton && (
-                            <Button
-                                variant="contained"
-                                component="label"
-                                color="warning"
-                            >
-                                Файл
-                                <input
-                                    type="file"
-                                    hidden
-                                />
-                            </Button>
+                            <div>
+                                <Button
+                                    variant="contained"
+                                    component="label"
+                                    color="warning"
+                                >
+                                    Файл
+                                    <input
+                                        type="file"
+                                        accept=".txt, .mp4"
+                                        hidden
+                                        onChange={(e) => { setFilepath(e.target.value) }}
+                                    />
+                                </Button>
+
+                            </div>
                         )}
+                    </Grid2>
+                    <Grid2>
+                        <h6>{filepath}</h6>
                     </Grid2>
                     <Grid2>
                         {showAddButton && (
@@ -169,7 +181,6 @@ export default function InputForPage({ showFileInput = true,
                     </Grid2>
                 </Grid2>
             </Box>
-            <h1>{lang1Term}</h1>
         </div>
     );
 }

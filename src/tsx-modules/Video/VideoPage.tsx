@@ -13,6 +13,7 @@ import { useState } from "react";
 
 import SearchIcon from "@mui/icons-material/Search";
 import InputForPage from "@/components/Input";
+import PageCardBase from "@/components/Card";
 
 
 export default function VideoPage() {
@@ -30,31 +31,19 @@ export default function VideoPage() {
         <div>
             <InputForPage></InputForPage>
             {
-                loading ? (
-                    <div></div>
-                ) : (
+                !loading && (
                     <div className={styles.loading_icon}><CircularProgress /></div>
                 )
             }
             <div className={`${styles.externalCardContainer} ${!loading ? styles.loading_bool : null}`}>
                 <Grid2 justifyContent="center" container spacing={2}>
-                    <VideoPageCard></VideoPageCard>
-                    <VideoPageCard></VideoPageCard>
-                    <VideoPageCard></VideoPageCard>
-                    <VideoPageCard></VideoPageCard>
-                    <VideoPageCard></VideoPageCard>
-                    <VideoPageCard></VideoPageCard>
-                    <VideoPageCard></VideoPageCard>
-                    <VideoPageCard></VideoPageCard>
-                    <VideoPageCard></VideoPageCard>
-                    <VideoPageCard></VideoPageCard>
-                    <VideoPageCard></VideoPageCard>
+                    <PageCardBase></PageCardBase>
                 </Grid2>
             </div>
             <div className={`${styles.pag} ${!loading ? styles.loading_bool : null}`}><Pagination count={10} color="secondary" /></div>
             <div>
                 {
-                    full_size ? (
+                    full_size && (
                         <div className={styles.open_Card}>
                             <div className={styles.inner_open_Card}>
                                 <div className={styles.baseline}>
@@ -62,10 +51,7 @@ export default function VideoPage() {
                                 </div>
                             </div>
                         </div>
-                    ) : (
-                        <div></div>
                     )
-
                 }
             </div>
         </div>
