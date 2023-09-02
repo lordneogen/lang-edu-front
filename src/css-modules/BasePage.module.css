@@ -23,8 +23,12 @@
 }
 
 .Card {
-    width: 40vmin;
-    height: 24vmax;
+    max-height: 24vmax;
+    height: fit-content;
+    min-height: 20em;
+
+    
+
     display: flex;
     justify-self: center;
     background: rgba(255, 255, 255, 0.2);
@@ -34,13 +38,18 @@
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     flex-direction: column;
-    padding: 0;
+    padding: 1vmax;
     transition: padding 2s;
     margin-top: 1vmax;
+    padding-bottom: 1vmin;
+    padding-top: 1vmin;
+
+    min-width: 15em;
+    width: fit-content;
 }
 
 .Card:hover {
-    padding: 0.3vmax;
+    padding: 1vmax;
     cursor: pointer;
 }
 
@@ -48,7 +57,9 @@
     margin-left: auto;
     margin-right: auto;
     width: 28vmin;
+    min-width: 14em;
     height: 12vmax;
+    min-height: 11em;
     border: solid rgb(147, 14, 94);
     margin-top: 2vmax;
     border-radius: 0.5vw;
@@ -63,10 +74,11 @@
 .Card_name {
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 2vmax;
+    margin-bottom: 1vmin;
     width: 28vmin;
-    height: 8vmax;
-    margin-top: 2vmax;
+    min-width: 14em;
+    height: 6vmax;
+    margin-top: 1vmin;
 
     background: rgba(255, 255, 255, 0.2);
     border-radius: 16px;
@@ -74,12 +86,20 @@
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+
 }
 
 .Card_name p {
     white-space: normal;
     overflow: hidden;
     text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .Card_crud {
@@ -91,7 +111,24 @@
 
     z-index: 99;
 }
+.Card_exit {
+    background-color:chocolate;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    width: 4vmax;
+    height: 4vmax;
 
+}
+.Card_exit:hover {
+    background-color:chocolate;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.Card_open_exit {
+    position: absolute;
+    top: -0.5vmax;
+    right: -0.5vmax;
+    z-index: 9999;
+}
 .loading_bool {
     visibility: hidden;
 }
@@ -112,7 +149,8 @@
 }
 
 .open_Card {
-    position: fixed;
+    z-index: 9999;
+    position:fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -124,7 +162,7 @@
 }
 
 .inner_open_Card {
-    position: fixed;
+    position:fixed;
     top: 10vmax;
     left: 12%;
     right: 12%;
