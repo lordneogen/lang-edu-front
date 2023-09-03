@@ -1,12 +1,13 @@
 import { type } from "os";
 import { Sub } from "./Sub";
 
-export interface CardProps {
+export interface OpenCardProps {
     name:string;
-    photo?: string;
+    video?: string;
     text?: string;
     texttr?: string;
-    setfull?: boolean;
+    onExit: () => void;
+    time?: number;
+    setTime?: (a: number) => void;
     subs?: Sub[];
-    time?:number;
 }

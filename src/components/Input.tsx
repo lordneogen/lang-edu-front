@@ -99,7 +99,6 @@ export default function InputForPage({
                     id="outlined-required"
                     label="Слово"
                     value={word1Term}
-                    defaultValue="Слово"
                     onChange={(e) => {
                       setWord1Term(e.target.value);
                     }}
@@ -145,7 +144,6 @@ export default function InputForPage({
                   onChange={(e) => {
                     setNameTerm(e.target.value);
                   }}
-                  defaultValue="Название"
                 />
               </div>
             )}

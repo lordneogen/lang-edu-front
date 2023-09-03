@@ -10,6 +10,7 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 1vmax;
     opacity: 0.8;
+    margin-top: 1em;
 }
 
 .default_1vmin_margin {
@@ -23,10 +24,7 @@
 }
 
 .Card {
-    max-height: 24vmax;
     height: fit-content;
-    min-height: 20em;
-
     
 
     display: flex;
@@ -150,22 +148,37 @@
 
 .open_Card {
     z-index: 9999;
-    position:fixed;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(117, 42, 143, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    bottom: 0;
+    right: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: rgba(94, 79, 119, 0.485);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
 }
-
+body:has(.open_Card){
+    overflow: hidden;
+}
 .inner_open_Card {
-    position:fixed;
-    top: 10vmax;
+    position:absolute;
+    top: 1em;
     left: 12%;
     right: 12%;
     width: 75%;
     height: 100%;
+}
+.subline {
+    margin-top: -1em;
+    margin-bottom: -1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.subline p:hover {
+    background-color: #19477F;
+    box-shadow: 12vmax 4vmax 4vmax rgba(0, 0, 0, 0.056);
 }

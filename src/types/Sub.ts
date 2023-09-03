@@ -1,7 +1,7 @@
 import { type } from "os";
 
-export type Sub=()=>{
+export type Sub={
     startTime:number,
     endTime:number,
-    sub:string
+    text:string
 }

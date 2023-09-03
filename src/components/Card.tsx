@@ -18,13 +18,15 @@ const actions = [
 
 export default function PageCardBase({
   photo = "",
+  name,
   text,
   texttr,
   setfull = false,
   subs,
+  time = 0,
 }: CardProps) {
   const [full_size, setFull_size] = useToggle(false);
-  const [time, setTime] = useState(0);
+  const [time_state, setTime] = useState(time);
 
   return (
     <div>
@@ -54,9 +56,9 @@ export default function PageCardBase({
             <div className={styles.Card_photo} onClick={setFull_size}></div>
           )}
 
-          {text != undefined && (
+          {name != undefined && (
             <div className={styles.Card_name} onClick={setFull_size}>
-              <p>{text}</p>
+              <p>{name}</p>
             </div>
           )}
 
@@ -70,9 +72,12 @@ export default function PageCardBase({
       <div>
         {full_size && setfull && (
           <PageFullCardBase
+            name={name}
             onExit={setFull_size}
-            time={time}
+            time={time_state}
             setTime={setTime}
+            subs={subs}
+            text={text}
           ></PageFullCardBase>
         )}
       </div>
